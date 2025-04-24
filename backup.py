@@ -66,7 +66,7 @@ def job():
         send_email(sender_email, receiver_email, subject, body, app_password)
 
 
-schedule.every().day.at("20:21").do(job)
+schedule.every().day.at("00:00").do(job)
 
 if __name__ == "__main__":
     print("⏳ Đang chạy lịch backup...")
