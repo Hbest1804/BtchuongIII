@@ -5,7 +5,7 @@ import schedule
 import time
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from datetime import datetime
+import datetime
 from dotenv import load_dotenv
 
 
@@ -38,9 +38,9 @@ def job():
 
         for file_name in os.listdir(db_folder):
             if file_name.endswith(".sql") or file_name.endswith(".sqlite3"):    
-                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+               
                 src_path = os.path.join(db_folder, file_name)
-                dst_filename = f"{file_name}_{timestamp}"
+                dst_filename = f"{file_name}"
                 dst_path = os.path.join(backup_folder, dst_filename)
                 shutil.copy2(src_path, dst_path)
                 backed_up_files.append(dst_filename)
