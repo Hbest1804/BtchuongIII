@@ -30,7 +30,7 @@ def send_email(sender, receiver, subject, body, password):
 
 def job():
     try:
-        db_folder = "."
+        db_folder = "BtchuongIII"
         backup_folder = "bk"
         os.makedirs(backup_folder, exist_ok=True)
 
